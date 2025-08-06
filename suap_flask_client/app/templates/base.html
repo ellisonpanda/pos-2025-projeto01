@@ -1,0 +1,24 @@
+<!-- app/templates/base.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}SUAP Alternativo{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>SUAP++</h1>
+    <ul>
+      <li><a href="{{ url_for('main.perfil') }}">Perfil</a></li>
+      <li><a href="{{ url_for('main.boletim') }}">Boletim</a></li>
+      <li><a href="{{ url_for('main.index') }}">Sair</a></li>
+    </ul>
+  </nav>
+  
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
